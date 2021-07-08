@@ -1,0 +1,31 @@
+<mat-card>
+  <h2 >{{title}}</h2>
+
+  <p>
+    Resolve guard value:
+    <mat-button-toggle-group
+      [formControl]="valueFormControl"
+      name="fontStyle"
+      aria-label="Font Style"
+    >
+      <mat-button-toggle [value]="true">true</mat-button-toggle>
+      <mat-button-toggle [value]="false">false</mat-button-toggle>
+      <mat-button-toggle [value]="urlTree">UrlTree</mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+
+  <p>
+    Delay is {{(delayFormControl.value || 0) / 1000}}s:
+    <mat-slider
+      thumbLabel
+      tickInterval="1000"
+      step="1000"
+      min="0"
+      max="5000"
+      [displayWith]="formatLabel"
+      [formControl]="delayFormControl"
+    ></mat-slider>
+  </p>
+
+
+</mat-card>
